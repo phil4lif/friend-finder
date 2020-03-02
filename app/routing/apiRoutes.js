@@ -1,17 +1,24 @@
 var express = require("express");
 var path = require("path");
+var friends = [
+    {
+        name: "Samantha",
+        photolink: "kajsjfsjfj",
+        responses: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+    }
+];
 
 //the post function that will add the users answer to the responsesArr array
 module.exports = function (app) {
-app.get("/api/responsesArr", function (req, res) {
-    return res.json(responsesArr)
-})
+    app.get("/api/friends", function (req, res) {
+        return res.json(friends)
+    })
 
-app.post("/api/responsesArr", function (req, res) {
-    var newResponse = req.body;
-    console.log(newResponse);
-    responsesArr.push(newResponse);
-    res.json(true)
-
-})
+    app.post("/api/friends", function (req, res) {
+        var newFriend = req.body;
+        
+        console.log(newFriend);
+        friends.push(newFriend);
+        res.json(true)
+    })
 }

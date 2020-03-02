@@ -9,7 +9,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 
-    <title>Document</title>
+    <title>Friend Finder Survey</title>
 </head>
 
 <body>
@@ -35,7 +35,7 @@
           </div>
         <div class="row">
             <div class="col s2">
-                <p>You prefer being out with friends than in with your cat</p>
+                <p>You've been classified or labeled as a nerd.</p>
                 <form action="#">
                     <p class="range-field">
                         <input type="range" id="q1" min="1" max="5" />
@@ -45,7 +45,7 @@
         </div>
         <div class="row">
             <div class="col s2">
-                <p>You prefer being out with friends than in with your cat</p>
+                <p>A great weekend away would include a tent and a sleeping bag.</p>
                 <form action="#">
                     <p class="range-field">
                         <input type="range" id="q2" min="1" max="5" />
@@ -55,7 +55,7 @@
         </div>
         <div class="row">
             <div class="col s2">
-                <p>You prefer being out with friends than in with your cat</p>
+                <p>Your mind  is busy even when your body is not.</p>
                 <form action="#">
                     <p class="range-field">
                         <input type="range" id="q3" min="1" max="5" />
@@ -65,7 +65,7 @@
         </div>
         <div class="row">
             <div class="col s2">
-                <p>You prefer being out with friends than in with your cat</p>
+                <p>You'd rather spend an hour reading up on a new skill or hobby than in a fitness club.</p>
                 <form action="#">
                     <p class="range-field">
                         <input type="range" id="q4" min="1" max="5" />
@@ -75,7 +75,7 @@
         </div>
         <div class="row">
             <div class="col s2">
-                <p>You prefer being out with friends than in with your cat</p>
+                <p>A cross country roadtrip sounds better than a cruise on the high seas.</p>
                 <form action="#">
                     <p class="range-field">
                         <input type="range" id="q5" min="1" max="5" />
@@ -85,7 +85,7 @@
         </div>
         <div class="row">
             <div class="col s2">
-                <p>You prefer being out with friends than in with your cat</p>
+                <p>You often daydream about the things that you want to do in the future.</p>
                 <form action="#">
                     <p class="range-field">
                         <input type="range" id="q6" min="1" max="5" />
@@ -95,7 +95,7 @@
         </div>
         <div class="row">
             <div class="col s2">
-                <p>You prefer being out with friends than in with your cat</p>
+                <p>You would rather spend money on an activity or night out than a new outfit</p>
                 <form action="#">
                     <p class="range-field">
                         <input type="range" id="q7" min="1" max="5" />
@@ -105,7 +105,7 @@
         </div>
         <div class="row">
             <div class="col s2">
-                <p>You prefer being out with friends than in with your cat</p>
+                <p>You consider yourself a friend to all even animals.</p>
                 <form action="#">
                     <p class="range-field">
                         <input type="range" id="q8" min="1" max="5" />
@@ -115,7 +115,7 @@
         </div>
         <div class="row">
             <div class="col s2">
-                <p>You prefer being out with friends than in with your cat</p>
+                <p>You've been known to shed a tear during an emotional scene in a movie or story.</p>
                 <form action="#">
                     <p class="range-field">
                         <input type="range" id="q9" min="1" max="5" />
@@ -125,7 +125,7 @@
         </div>
         <div class="row">
             <div class="col s2">
-                <p>You prefer being out with friends than in with your cat</p>
+                <p>You consider yourself to be an environmentalist.</p>
                 <form action="#">
                     <p class="range-field">
                         <input type="range" id="q10" min="1" max="5" />
@@ -159,7 +159,8 @@ $("#submit").on("click", function (event) {
     var newFriend = {
         name: $("#nameinput").val().trim(),
         photolink: $("#photoinput").val().trim(),
-        responses: [$("#q1").val().trim(),
+        responses: [
+        $("#q1").val().trim(),
         $("#q2").val().trim(),
         $("#q3").val().trim(),
         $("#q4").val().trim(),
@@ -169,8 +170,13 @@ $("#submit").on("click", function (event) {
         $("#q8").val().trim(),
         $("#q9").val().trim(),
         $("#q10").val().trim()]
-    }
-    console.log(newFriend);
+    };
+    $.post("/api/friends", newFriend)
+        .then(function (data) {
+            if (data) {
+                alert("Your Profile Has Been Added to the Array of Friends")
+            }
+        })
 })
     </script>
 
