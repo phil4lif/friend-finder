@@ -171,6 +171,11 @@ $("#submit").on("click", function (event) {
         $("#q9").val().trim(),
         $("#q10").val().trim()]
     };
+    console.log(newFriend)
+    for (var i = 0; i<newFriend.responses.length; i++){
+        newFriend.responses[i]=parseInt(newFriend.responses[i])
+    }
+    console.log(newFriend.responses);
     $.post("/api/friends", newFriend)
         .then(function (data) {
             if (data) {

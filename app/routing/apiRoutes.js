@@ -10,9 +10,16 @@ module.exports = function (app) {
 
     app.post("/api/friends", function (req, res) {
         var newFriend = req.body;
-        
-        console.log(newFriend);
+        // console.log(newFriend);
         friends.push(newFriend);
         res.json(true)
+        // for (var i = 0; i < friends.length; i++){
+            // var scoresArr = (friends[i].responses)
+            // console.log(scoresArr);
+        // }
     })
 }
+// for (var i = 0; i < friends.length; i++){
+//     var scoresArr = friends[i].responses
+//     console.log(scoresArr);
+// }
