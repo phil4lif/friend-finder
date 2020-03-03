@@ -1,12 +1,6 @@
 var express = require("express");
 var path = require("path");
-var friends = [
-    {
-        name: "Samantha",
-        photolink: "kajsjfsjfj",
-        responses: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
-    }
-];
+var friends = require("../data/friends");
 
 //the post function that will add the users answer to the responsesArr array
 module.exports = function (app) {
