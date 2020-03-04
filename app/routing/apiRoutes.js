@@ -9,14 +9,31 @@ module.exports = function (app) {
     })
 
     app.post("/api/friends", function (req, res) {
+        var match = [];
+        var totalDiff = 0;
         var newFriend = req.body;
-        // console.log(newFriend);
         friends.push(newFriend);
-        res.json(true)
-        // for (var i = 0; i < friends.length; i++){
-            // var scoresArr = (friends[i].responses)
-            // console.log(scoresArr);
-        // }
+      
+        for (var i = 0; i < friends.length; i++){
+            var friendPool = friends[i];
+            totalDif = 0;
+            for (var j = 0; j < friendPool.responses.length; j++){
+                totalDiff += Math.abs(newFriend.responses[j] - friendPool.responses[j]);
+            }
+        match.push({
+            name: friendPool.name,
+            photolink: friendPool.photolink,
+            totalDiff: totalDiff
+        });
+     
+        }
+
+        match.sort(function (a,b){
+            return parseInt(a.totalDiff) - parseInt(b.totalDiff);
+        });
+        console.log(match)
+        res.json(match[0]);
+       // console.log(match[0]);
     })
 }
 // for (var i = 0; i < friends.length; i++){

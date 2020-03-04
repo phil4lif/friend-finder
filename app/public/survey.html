@@ -135,15 +135,24 @@
         </div>
         <div class="row">
             <div class="col s2">
-                <button class="btn waves-effect waves-light" type="submit" name="action" id="submit">Submit
+                <a href="#modal1"  class="btn waves-effect waves-light modal-trigger"  name="action" id="submit">Submit
                     <i class="material-icons right">send</i>
-                </button>
+                </a>
             </div>
         </div>
     </div>
 
 
-
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+      <h4 id="name"></h4>
+      <img id="profileimage">
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+    </div>
+  </div>
 
 
 
@@ -154,6 +163,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script type="text/javascript">
+      $(document).ready(function(){
+    $('.modal').modal();
+  });
 $("#submit").on("click", function (event) {
     console.log("submit");
     var newFriend = {
@@ -171,15 +183,21 @@ $("#submit").on("click", function (event) {
         $("#q9").val().trim(),
         $("#q10").val().trim()]
     };
-    console.log(newFriend)
+    // var newResponse = parseInt($("#q1").val().trim())
+    // console.log(newResponse);
+    // console.log(newFriend.responses[0])
     for (var i = 0; i<newFriend.responses.length; i++){
         newFriend.responses[i]=parseInt(newFriend.responses[i])
     }
     console.log(newFriend.responses);
     $.post("/api/friends", newFriend)
         .then(function (data) {
+            console.log(data)
             if (data) {
-                alert("Your Profile Has Been Added to the Array of Friends")
+                // <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Modal</a>
+            $("#name").text(data.name)
+            $("#profileimage").attr("src", data.photolink)
+
             }
         })
 })
