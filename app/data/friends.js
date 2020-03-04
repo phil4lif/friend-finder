@@ -13,6 +13,11 @@ var friends = [
         name: "Laura Palmer",
         photolink: "https://upload.wikimedia.org/wikipedia/en/1/12/Laura_Palmer.jpg",
         responses: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
+    },
+    {
+        name: "Navi",
+        photolink: "images\navi.jpg",
+        responses: [3, 4, 5, 3, 4, 5, 3, 4, 5 , 5]
     }
 ];
 
