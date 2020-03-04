@@ -8,6 +8,11 @@ var friends = [
         name: "Phil",
         photolink: "https://picsum.photos/seed/picsum/200/300",
         responses: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
+    },
+    {
+        name: "Laura Palmer",
+        photolink: "https://upload.wikimedia.org/wikipedia/en/1/12/Laura_Palmer.jpg",
+        responses: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
     }
 ];
 

@@ -12,11 +12,11 @@ module.exports = function (app) {
         var match = [];
         var totalDiff = 0;
         var newFriend = req.body;
-        friends.push(newFriend);
       
         for (var i = 0; i < friends.length; i++){
             var friendPool = friends[i];
-            totalDif = 0;
+            totalDiff = 0;
+            console.log(friendPool)
             for (var j = 0; j < friendPool.responses.length; j++){
                 totalDiff += Math.abs(newFriend.responses[j] - friendPool.responses[j]);
             }
@@ -25,18 +25,16 @@ module.exports = function (app) {
             photolink: friendPool.photolink,
             totalDiff: totalDiff
         });
-     
         }
+        friends.push(newFriend);
+
+        console.log(match)
 
         match.sort(function (a,b){
             return parseInt(a.totalDiff) - parseInt(b.totalDiff);
         });
-        console.log(match)
+        // console.log(match)
         res.json(match[0]);
-       // console.log(match[0]);
+    //    console.log(match[0]);
     })
 }
-// for (var i = 0; i < friends.length; i++){
-//     var scoresArr = friends[i].responses
-//     console.log(scoresArr);
-// }
