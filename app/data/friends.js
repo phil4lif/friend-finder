@@ -23,6 +23,16 @@ var friends = [
         name: "Bernard",
         photolink: "https://image.cnbcfm.com/api/v1/image/106207101-1572264314938rts2t5ab.jpg?v=1572264369&w=678&h=381",
         responses: [4, 5, 3, 4, 5, 2, 3, 4, 5, 5,]
+    },
+    {
+        name: "Mike",
+        photolink: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Mike_Bloomberg_Headshot.jpg",
+        responses: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1,]
+    },
+    {
+        name: "Ryan",
+        photolink: "https://www.gstatic.com/tv/thumb/persons/157012/157012_v9_ba.jpg",
+        responses: [5, 4, 3, 2, 5, 4, 3, 5, 4, 3]
     }
 ];
 
