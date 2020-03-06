@@ -1,16 +1,11 @@
 var friends = [
     {
-        name: "Samantha",
+        name: "Sam",
         photolink: "https://picsum.photos/id/237/200/300",
-        responses: [5, 5, 5, 5, 5, 5, 5, 5, 5, 5]
+        responses: [5, 5, 4, 5, 4, 4, 4, 4, 4, 4]
     },
     {
-        name: "Phil",
-        photolink: "https://picsum.photos/seed/picsum/200/300",
-        responses: [4, 4, 4, 4, 4, 4, 4, 4, 4, 4]
-    },
-    {
-        name: "Laura Palmer",
+        name: "Laura",
         photolink: "https://upload.wikimedia.org/wikipedia/en/1/12/Laura_Palmer.jpg",
         responses: [3, 3, 3, 3, 3, 3, 3, 3, 3, 3]
     },
@@ -25,14 +20,14 @@ var friends = [
         responses: [4, 5, 3, 4, 5, 2, 3, 4, 5, 5,]
     },
     {
-        name: "Mike",
-        photolink: "https://upload.wikimedia.org/wikipedia/commons/e/e2/Mike_Bloomberg_Headshot.jpg",
-        responses: [1, 1, 1, 1, 1, 1, 1, 1, 1, 1,]
-    },
-    {
         name: "Ryan",
         photolink: "https://www.gstatic.com/tv/thumb/persons/157012/157012_v9_ba.jpg",
         responses: [5, 4, 3, 2, 5, 4, 3, 5, 4, 3]
+    },
+    {
+        name: "Donna",
+        photolink: "https://i.pinimg.com/originals/dd/26/88/dd2688d50d8641f2db6b48b0f70e0fab.jpg",
+        responses: [1, 2, 3, 4, 5, 4, 3, 2, 1, 2]
     }
 ];
 
